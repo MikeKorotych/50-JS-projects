@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  background-color: black;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  /* color: #ffcc70;
+  color: #c850c0;
+  color: #4159d0; */
+  animation: textclr 20s linear infinite running;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bgtext 4s linear infinite running;
+  /* animation-iteration-count: 0.5; */
+}
+
+.container {
+  position: relative;
+  background-color: #0f0f16;
+  padding: 20px 40px;
+  border-radius: 1rem;
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px #c850c096 solid;
+  display: block;
+  width: 100%;
+  padding: 13px 0;
+  font-size: 18px;
+  color: #c850c0;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+}
+
+@keyframes bgtext {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 63vw 0%;
+  }
+}
+
+@keyframes textclr {
+  0% {
+    color: #4159d0;
+  }
+  33% {
+    color: #ffcc70;
+  }
+  66% {
+    color: #c850c0;
+  }
+  99.9% {
+    color: #4159d0;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    background-position: 3vw 3vh;
+    filter: blur(15px);
+  }
+  50% {
+    background-position: 38vw 42vh;
+    filter: blur(25px);
+    transform: scale(0.97);
+  }
+}
+
+.container:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #f8acff 0%, #696eff 100%);
+  transform: translate3d(0px, 0px, 0) scale(1);
+  filter: blur(15px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+
+  animation: shadow 10s linear infinite alternate;
+}
+
+.container::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+
+  /* animation: shadow 4s linear infinite alternate; */
+}
+
+.btn {
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  /* display: inline-block; */
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  border-radius: 5px;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  /* background-position: 300px 0; */
+  opacity: 1;
+}
+
+.btn:focus {
+  border: 0;
+}
+
+.btn:active {
+  scale: 0.97;
+}
+
+.text {
+  margin-top: 30px;
+  color: #c850c0;
+  text-align: center;
+}
+
+.text a {
+  margin-left: 5px;
+}
+
+.form-control input {
+  transition: all 0.3s ease;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  border-bottom-color: #ffcd70d0;
+  border-bottom-color: #c850c0;
+  transition: all 0.3s ease;
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: all 0.2s ease-in;
+  color: #c850c0;
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  transition: all 0.2s ease-in;
+  transform: translateY(-30px);
+  color: #c850c096;
+  font-size: 12px;
+}
